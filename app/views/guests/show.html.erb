@@ -2,3 +2,12 @@
 
 <h3><%= @guest.occupation %></h3>
 
+
+<% @appearances.each do |appearance| %>
+  <% if @guest.id ==  appearance.guest_id %>
+    Appearance ID's <br>
+    <!--- would add method that turns appearance.episode_id into episode params to display --->
+    ID: <%= link_to appearance.id, edit_appearance_path(appearance)%> <br>
+    Rating: <%= appearance.rating %> <br>
+  <% end %>
+<% end %>
